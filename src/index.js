@@ -1,11 +1,23 @@
 import { connectDataBase } from "./DataBase/index.js";
 import dotenv from "dotenv";
+import { app } from "./app.js";
 
 dotenv.config({
   path: "../env",
 });
 
-connectDataBase();
+connectDataBase()
+  .then(() => {
+    app.listen(process.env.PORT || 8000, () => {
+      console.log(` we are listening  on ${process.env.PORT}`);
+      app.on("error", (er) => {
+        console.log("error while connecting ", er);
+      });
+    });
+  })
+  .catch((error) => {
+    console.log("this is error ", error);
+  });
 
 // (async () => {
 //   try {

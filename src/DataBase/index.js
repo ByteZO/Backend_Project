@@ -8,8 +8,7 @@ export const connectDataBase = async () => {
     );
     console.log(" connected successfully... ", connection.connection.host);
   } catch (error) {
-    console.log(error ,"ghdar baar ho gai hai ");
+    console.log(error, "ghdar baar ho gai hai ");
     process.exit(1);
   }
 };
-
