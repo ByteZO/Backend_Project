@@ -22,6 +22,5 @@ app.use(
 
 // declaration of routes
 
-app.use("/api/v1/users ", router);
+app.use("/api/v1/users", router);
 
-//exporting express which is in app !!!

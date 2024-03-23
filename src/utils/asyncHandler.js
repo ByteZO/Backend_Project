@@ -1,9 +1,9 @@
 export const asyncHandler = (fn) => {
   return async (req, res, next) => {
     try {
-      await fn(req, res, next);
+      return await fn(req, res, next);
     } catch (error) {
-      res.status(error.code || 500).json({
+      return res.status(error.code || 500).json({
         success: false,
         message: error.message,
       });
@@ -11,12 +11,14 @@ export const asyncHandler = (fn) => {
   };
 };
 
-//anOther way to write this
 
-// const asyncHandler = (fn)=>{
-//     (req , res, next )=>{
-//         Promise.resolve(fn(req,res,next)).catch((error)=>{
-//             next(error)
-//         })
-//     }
-// }
+
+
+
+
+//anOther way to write this
+// export const asyncHandler = (fn) => {
+//   return (req, res, next) => {
+//     Promise.resolve(fn(req, res, next)).catch((error) => next(error));
+//   };
+// };

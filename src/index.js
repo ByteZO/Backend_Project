@@ -19,6 +19,7 @@ connectDataBase()
     console.log("this is error ", error);
   });
 
+
 // (async () => {
 //   try {
 //     await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`);
