@@ -24,4 +24,3 @@ export const uploadOnCloudinary = async (filePath) => {
     console.log("this is the error ", error);
   }
 };
-
