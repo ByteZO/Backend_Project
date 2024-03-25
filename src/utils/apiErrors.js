@@ -9,6 +9,7 @@ class apiErrors extends Error {
     this.statusCode = statusCode;
     this.data = null;
     this.message = message;
+    console.log(this.message);
     this.success = false;
     this.errors = errors;
 

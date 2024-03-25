@@ -17,6 +17,7 @@ export const uploadOnCloudinary = async (filePath) => {
     });
     // loging the success upload and returning the response after login
     console.log("File upload is successfull");
+    fs.unlinkSync(filePath);
     return response;
   } catch (error) {
     // unlinking the file if the upload goes wrong !!!

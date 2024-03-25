@@ -88,4 +88,4 @@ userSchema.methods.genrateRefreshAccessToken = function () {
   );
 };
 
-export const User = mongoose.model("User", useSchema);
+export const User = mongoose.model("User", userSchema);
